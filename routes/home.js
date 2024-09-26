@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET users listing. */
+const apiKey = process.env.MAPBOX_PUB_KEY;
+
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('index', { title: `Express - ${apiKey}` });
 });
 
 module.exports = router;
